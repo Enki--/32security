@@ -4,6 +4,8 @@ import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'server',
-  adapter: cloudflare()
+  output: 'static', // Changed from 'server' to 'static' for simpler deployment
+  build: {
+    assets: 'assets'
+  }
 });
