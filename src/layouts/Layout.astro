@@ -1,0 +1,38 @@
+---
+import '../styles/base.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-af-white text-af-blue">
+    <nav class="bg-af-blue text-af-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold">32 Security</a>
+        <div class="space-x-4">
+          <a href="/" class="hover:text-af-silver">Home</a>
+          <a href="/services" class="hover:text-af-silver">Services</a>
+          <a href="/contact" class="hover:text-af-silver">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="bg-af-blue text-af-white p-4 mt-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 32 Security. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
